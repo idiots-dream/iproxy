@@ -1,6 +1,6 @@
 package balancer
 
-import "github.com/lafikl/consistent"
+import "github.com/idiots-dream/iproxy/consistent"
 
 func init() {
 	factories[BoundedBalancer] = NewBounded

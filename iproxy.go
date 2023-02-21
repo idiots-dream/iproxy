@@ -20,6 +20,7 @@ func main() {
 		log.Fatalf("verify config error: %s", err)
 	}
 
+	// create a new router instance
 	router := mux.NewRouter()
 	for _, l := range config.Location {
 		httpProxy, err := proxy.NewHTTPProxy(l.ProxyPass, l.BalanceMode)

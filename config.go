@@ -32,16 +32,17 @@ type Config struct {
 type Location struct {
 	Pattern     string   `yaml:"pattern"`
 	ProxyPass   []string `yaml:"proxy_pass"`
-	BalanceMode string   `yaml:"balance_mode"`
+	BalanceMode string   `yaml:"balance_mode"` // balance algorithm
 }
 
-// ReadConfig read configuration from `fileName` file
+// ReadConfig 读取配置文件信息，返回结构体
 func ReadConfig(fileName string) (*Config, error) {
 	in, err := ioutil.ReadFile(fileName)
 	if err != nil {
 		return nil, err
 	}
 	var config Config
+	// 使用yaml反解析配置文件
 	err = yaml.Unmarshal(in, &config)
 	if err != nil {
 		return nil, err
@@ -49,7 +50,7 @@ func ReadConfig(fileName string) (*Config, error) {
 	return &config, nil
 }
 
-// Print print config details
+// Print 打印config结构体详情
 func (c *Config) Print() {
 	fmt.Printf("%s\nSchema: %s\nPort: %d\nHealth Check: %v\nLocation:\n",
 		ascii, c.Schema, c.Port, c.HealthCheck)

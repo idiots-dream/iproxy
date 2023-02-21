@@ -3,7 +3,7 @@ package balancer
 import (
 	"sync"
 
-	fibHeap "github.com/starwander/GoFibonacciHeap"
+	fibHeap "github.com/idiots-dream/iproxy/fibonacciheap"
 )
 
 func init() {

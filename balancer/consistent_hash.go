@@ -1,7 +1,7 @@
 package balancer
 
 import (
-	"github.com/lafikl/consistent"
+	"github.com/idiots-dream/iproxy/consistent"
 )
 
 func init() {

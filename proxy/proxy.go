@@ -30,19 +30,20 @@ type HTTPProxy struct {
 	alive        map[string]bool
 }
 
-// NewHTTPProxy create  new reverse proxy with url and balancer algorithm
-func NewHTTPProxy(targetHosts []string, algorithm string) (
-	*HTTPProxy, error) {
-
+// NewHTTPProxy create new reverse(反向，撤销) proxy with url and balancer algorithm
+func NewHTTPProxy(targetHosts []string, algorithm string) (*HTTPProxy, error) {
 	hosts := make([]string, 0)
 	hostMap := make(map[string]*httputil.ReverseProxy)
 	alive := make(map[string]bool)
 	for _, targetHost := range targetHosts {
+		log.Println("target Host:", targetHost)
 		url, err := url.Parse(targetHost)
+		log.Println("url:", url)
 		if err != nil {
 			return nil, err
 		}
 		proxy := httputil.NewSingleHostReverseProxy(url)
+		log.Println("proxy:", proxy)
 
 		originDirector := proxy.Director
 		proxy.Director = func(req *http.Request) {
