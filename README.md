@@ -1,8 +1,6 @@
-# balancer
+# IProxy
 
-[![Go Report Card](https://goreportcard.com/badge/github.com/zehuamama/balancer)&nbsp;](https://goreportcard.com/report/github.com/zehuamama/balancer)![GitHub top language](https://img.shields.io/github/languages/top/zehuamama/balancer)&nbsp;![GitHub](https://img.shields.io/github/license/zehuamama/balancer)&nbsp;[![CodeFactor](https://www.codefactor.io/repository/github/zehuamama/balancer/badge)](https://www.codefactor.io/repository/github/zehuamama/balancer)&nbsp;[![codecov](https://codecov.io/gh/zehuamama/balancer/branch/main/graph/badge.svg)](https://codecov.io/gh/zehuamama/balancer)&nbsp; ![go_version](https://img.shields.io/badge/go%20version-1.17-yellow)
-
-`balancer` is a layer 7 load balancer that supports http and https, and it is also a go library that implements `load balancing` algorithms.
+`IProxy` is a layer 7 load balancer that supports http and https, and it is also a go library that implements `load balancing` algorithms.
 
 It currently supports load balancing algorithms:
 
@@ -19,7 +17,7 @@ It currently supports load balancing algorithms:
 First download the source code of balancer:
 
 ```shell
-> git clone https://github.com/zehuamama/balancer.git
+> git clone https://github.com/idiots-dream/iproxy.git
 ```
 
 compile the source code:
@@ -32,7 +30,7 @@ compile the source code:
 
 ## Run
 
-`Balancer` needs to configure the `config.yaml` file, see [config.yaml](https://github.com/zehuamama/balancer/blob/main/config.yaml) :
+`Balancer` needs to configure the `config.yaml` file, see [config.yaml](https://github.com/idiots-dream/iproxy/blob/main/config.yaml) :
 
 and now, you can execute `balancer`, the balancer will print the ascii diagram and configuration details:
 
@@ -58,10 +56,6 @@ Location:
 ## API Usage
 
 `balancer` is also a go library that implements load balancing algorithms, it can be used alone as an API, you need to import it into your project first:
-
-```shell
-> go get github.com/zehuamama/balancer/balancer
-```
 
 Build the load balancer with `balancer.Build`:
 
